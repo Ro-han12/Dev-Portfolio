@@ -1,4 +1,5 @@
 import React from 'react'
+
 import BasicDetail from './BasicDetail'
 function FormContent() {
   return (
