@@ -1,6 +1,4 @@
 "use client"
-// import { PreviewUpdateContext } from '@/app/_context/PreviewUpdateContext'
-// import { UserDetailContext } from '@/app/_context/UserDetailContext'
 import  { useContext } from 'react'
 
 function MobilePreview() {
