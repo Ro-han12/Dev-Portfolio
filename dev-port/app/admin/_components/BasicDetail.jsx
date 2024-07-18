@@ -8,9 +8,21 @@ import { useUser } from '@clerk/nextjs';
 import { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { eq } from 'drizzle-orm';
+import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext';
+import { UserDetailContext } from '../../_context/UserDetailContext';
 function BasicDetail() {
+
     let timeoutId;
     const {user}=useUser();
+
+    // const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
+    const {userDetail,setUserDetail}=useContext(UserDetailContext);
+    // const [selectedOption,setSelectedOption]=useState();
+    // const [profileImage,setProfileImage]=useState();
+    useEffect(()=>{
+        userDetail&&console.log(userDetail)
+
+    },[userDetail])
     /**
      * Used to Save user Info
      * @param {*} event 
@@ -29,6 +41,8 @@ function BasicDetail() {
                 toast.success('Saved!',{
                     position:'top-right'
                 })
+
+                setUpdatePreview(updatePreview+1)
                 
             }
             else{
@@ -38,18 +52,19 @@ function BasicDetail() {
             }
         },1000)
     }
-       
   return (
     <div>
     <div className='p-7 rounded-lg bg-gray-800 my-7 '></div>
     <div className='flex gap-6 items-center'>
         <Camera className='p-3 h-12 w-12 bg-gray-500 rounded-full cursor-pointer' />
         <input type="text" placeholder='Username'
+        defaultValue={userDetail?.name}
         onChange={(event)=>onInputChange(event,'name')}
         className='input input-bordered w-full '/>
     </div>
     <textarea className='textarea textarea-bordered mt-3 w-full'
      placeholder='Bio'
+     defaultValue={userDetail?.bio}
      onChange={(event)=>onInputChange(event,'bio')}
      ></textarea>
         
