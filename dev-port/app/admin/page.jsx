@@ -5,6 +5,8 @@ import { useUser } from '@clerk/nextjs';
 import { eq } from 'drizzle-orm';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
+import FormContent from './_components/FormContent'
+import MobilePreview from './_components/MobilePreview'
 
 function Admin() {
     const { user } = useUser();
@@ -24,8 +26,17 @@ function Admin() {
     };
 
     return (
-        <div> Admin </div>
-    );
-}
-
-export default Admin;
+        <div className='p-5 h-full'>
+          <div className='grid grid-cols-1 lg:grid-cols-3'>
+            <div className='col-span-2'>
+              <FormContent/>
+            </div>
+            <div>
+              <MobilePreview/>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    
+    export default Admin
