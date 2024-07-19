@@ -52,7 +52,7 @@ function AddProject({refreshData}) {
                 <form onSubmit={handleSubmit} className='p-3 rounded-lg bg-gray-800'>
                     <label className="input input-bordered flex items-center gap-2 my-3">
                         <Link2 />
-                        <input type="url" className="grow" defaultValue={'https://'}
+                        <input type="url" className="grow" 
                             placeholder="Project Url" />
                     </label>
                     <button type="submit"
