@@ -13,3 +13,18 @@ export const userInfo=pgTable('userInfo',{
     profileImage:varchar('profileImage'),
     theme:varchar('theme').default('light')
 })
+
+export const project=pgTable('projects',{
+    id:serial('id').primaryKey(),
+    name:varchar('name'),
+    desc:text('desc'),
+    url:varchar('url').notNull(),
+    logo:varchar('logo'),
+    banner:varchar('banner'),
+    category:varchar('category'),
+    active:boolean('active').default(true),
+    emailRef:varchar('emailRef'),
+    userRef:integer('userRef').references(()=>userInfo?.id),
+    showGraph:boolean('showGraph').default(true),
+    order:integer('order').default(0)
+})
