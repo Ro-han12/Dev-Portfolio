@@ -2,7 +2,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css";
+
+import { TwicInstall } from "@twicpics/components/react";
+import "@twicpics/components/style.css";
+import Provider from "./Provider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,12 +18,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en"  >
+    <html lang="en" >
       <body className={inter.className}>
-        <div data-theme="dark" className="h-screen" >
-          {children}
-          <ToastContainer/>
-          </div>
+      <TwicInstall
+        // domain is mandatory
+        domain="https://thegenaishow.twic.pics"
+      />
+        <div data-theme="light" className="">
+        <Provider>
+        {children}
+        </Provider>
+       
+        <ToastContainer />
+        </div>
         </body>
     </html>
     </ClerkProvider>

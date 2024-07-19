@@ -1,6 +1,6 @@
 "use client"
-import { db } from '@/utils'
-import { project, userInfo } from '@/utils/schema'
+import { db } from '/utils'
+import { project, userInfo } from '/utils/schema'
 import { useUser } from '@clerk/nextjs'
 import {  asc, eq } from 'drizzle-orm'
 import React, { useEffect, useState } from 'react'
