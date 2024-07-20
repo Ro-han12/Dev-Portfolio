@@ -1,5 +1,5 @@
 
-
+import { relations } from "drizzle-orm";
 const { pgTable, serial, varchar, text, integer, boolean } = require("drizzle-orm/pg-core");
 
 export const userInfo=pgTable('userInfo',{
@@ -28,3 +28,22 @@ export const project=pgTable('projects',{
     showGraph:boolean('showGraph').default(true),
     order:integer('order').default(0)
 })
+
+export const ProjectClicks=pgTable('projectClicks',{
+    id:serial('id').primaryKey(),
+    projectRef:integer('projectRef').references(()=>project.id),
+    month:varchar('month')
+})
+
+export const userProjectRelation=relations(userInfo,({many})=>(
+    {
+        project:many(project)
+    }
+))
+
+export const postRelation=relations(project,({one})=>(
+    {
+        user:one(userInfo,{fields:[project.userRef],references:[userInfo.id]})
+    }
+))
+
