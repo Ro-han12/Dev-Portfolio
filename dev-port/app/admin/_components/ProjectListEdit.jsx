@@ -7,7 +7,7 @@ import { ref, uploadBytes } from 'firebase/storage'
 import { GripVertical, Image, LayoutGrid, LineChart, Link2, SquareStack, Trash2 } from 'lucide-react'
 import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
-// import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useUser } from '@clerk/nextjs'
 import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext'
@@ -56,7 +56,7 @@ function ProjectListEdit({ projectList, refreshData }) {
         console.log(fileName)
         const storageRef = ref(storage, fileName);
         uploadBytes(storageRef, file).then(async (snapshot) => {
-            console.log('Uploaded a blob or file!');
+            console.log('file uploaded!');
             const result = await db.update(project).set({
                 [fieldName]: fileName + "?alt=media"
             }).where(eq(project.id, projectId))

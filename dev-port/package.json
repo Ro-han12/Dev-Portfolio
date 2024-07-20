@@ -23,7 +23,8 @@
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.3.1",
     "react-draggable": "^4.4.6",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "sweetalert2": "^11.12.3"
   },
   "devDependencies": {
     "@types/react": "18.3.3",
