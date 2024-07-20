@@ -18,7 +18,7 @@ function BasicDetail() {
     let timeoutId;
     const {user}=useUser();
 
-    // const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
+    const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
     const {userDetail,setUserDetail}=useContext(UserDetailContext);
     const [selectedOption,setSelectedOption]=useState();
     const [profileImage,setProfileImage]=useState();
@@ -45,7 +45,7 @@ function BasicDetail() {
                     position:'top-right'
                 })
 
-                // setUpdatePreview(updatePreview+1)
+                setUpdatePreview(updatePreview+1)
                 
             }
             else{
@@ -75,7 +75,7 @@ function BasicDetail() {
                         toast.success('Saved!',{
                             position:'top-right'
                         }) 
-                    //  setUpdatePreview(updatePreview+1)
+                    setUpdatePreview(updatePreview+1)
 
                     }
             },(e)=>console.log(e));

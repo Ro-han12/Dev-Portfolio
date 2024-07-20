@@ -1,11 +1,14 @@
-"use client"
-import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext'
-import { UserDetailContext } from '../../_context/UserDetailContext'
-import { useContext } from 'react'
+
+"use client";
+
+import { useContext, useEffect, useState } from 'react';
+import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext';
+import { UserDetailContext } from '../../_context/UserDetailContext';
+
 
 function MobilePreview() {
 
-  // const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
+  const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
   const {userDetail,setUserDetail}=useContext(UserDetailContext)
   return (
     <div className='p-5  md:fixed'>
@@ -14,7 +17,7 @@ function MobilePreview() {
         h-screen rounded-[40px] m-2 shadow-md shadow-primary'>
           <iframe
             title='Profile'
-            // key={updatePreview}
+            key={updatePreview}
             src={process.env.NEXT_PUBLIC_BASE_URL+userDetail?.username}
             width="100%"
             height="100%"

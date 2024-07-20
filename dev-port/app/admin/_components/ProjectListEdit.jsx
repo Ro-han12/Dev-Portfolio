@@ -14,7 +14,7 @@ import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext'
 function ProjectListEdit({ projectList, refreshData }) {
     const [selectedOption, setSelectedOption] = useState()
     const [projectListData,setProjectListData]=useState([]);
-    // const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
+    const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
 
     let timeoutId;
     const {user}=useUser();
