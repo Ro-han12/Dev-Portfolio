@@ -29,3 +29,6 @@ body {
     text-wrap: balance;
   }
 }
+btn-secondary.white-text {
+  color: white;
+}

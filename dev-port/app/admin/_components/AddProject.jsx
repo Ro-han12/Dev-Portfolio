@@ -43,7 +43,7 @@ function AddProject({refreshData}) {
         <div>
 
             {!openUrlInput ?
-                <button className='btn btn-secondary w-full'
+                <button className='btn btn-secondary w-full white-text'
                     onClick={() => setOpenUrlInput(true)}
                 >
                     + Add New Project / Startup</button>
