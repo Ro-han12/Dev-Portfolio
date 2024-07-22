@@ -16,7 +16,7 @@ function Provider({children}) {
   useEffect(()=>{
  
     USERNAME&&GetUserDetails();
-  },[USERNAME])
+  },[])
 
   /**
    * used to get user detail with Project details
