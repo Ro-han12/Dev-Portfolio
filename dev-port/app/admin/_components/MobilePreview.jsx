@@ -1,12 +1,12 @@
 "use client"
 
-import { useContext, useEffect, useState } from 'react';
-import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext';
-import { UserDetailContext } from '../../_context/UserDetailContext';
+import { useContext, useEffect, useState } from 'react'
+import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext'
+import { UserDetailContext } from '../../_context/UserDetailContext'
 
 function MobilePreview() {
-  const { updatePreview, setUpdatePreview } = useContext(PreviewUpdateContext);
-  const { userDetail, setUserDetail } = useContext(UserDetailContext);
+  const { updatePreview, setUpdatePreview } = useContext(PreviewUpdateContext)
+  const { userDetail, setUserDetail } = useContext(UserDetailContext)
 
   return (
     <div className='p-5 md:fixed'>
@@ -24,4 +24,4 @@ function MobilePreview() {
   );
 }
 
-export default MobilePreview;
+export default MobilePreview
