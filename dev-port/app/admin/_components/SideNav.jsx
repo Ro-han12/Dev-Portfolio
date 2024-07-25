@@ -23,14 +23,14 @@ function SideNav() {
             id:3,
             name:'Stats',
             icon:BarChart,
-            path:'/admin/analytics'
-        },
-        {
-            id:4,
-            name:'Settings',
-            icon:Settings,
-            path:'/admin/setting'
-        }
+            path:'/admin/analytics'}
+        // },
+        // {
+        //     id:4,
+        //     name:'Settings',
+        //     icon:Settings,
+        //     path:'/admin/setting'
+        // }
     ]
   return (
     <div className='p-4 bg-[#00000052] h-screen'>
