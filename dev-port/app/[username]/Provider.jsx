@@ -1,5 +1,5 @@
 "use client"
-import { db } from '../../utils'; 
+import { db } from '../../utils'
 import { userInfo } from '../../utils/schema';
 
 import { eq } from 'drizzle-orm';

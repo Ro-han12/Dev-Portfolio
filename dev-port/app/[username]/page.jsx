@@ -2,7 +2,7 @@
 import  { useContext } from 'react'
 import UserDetailInfo from './_components/UserDetailInfo'
 import ProjectList from './_components/ProjectList'
-import { UserDetailContext } from '../_context/UserDetailContext'// 
+import { UserDetailContext } from '../_context/UserDetailContext'
 
 function UserPage() {
   const {userDetail,setUserDetail}=useContext(UserDetailContext);
