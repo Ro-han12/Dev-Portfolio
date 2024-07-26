@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from 'react'
 import { PreviewUpdateContext } from '../../_context/PreviewUpdateContext'
 import { UserDetailContext } from '../../_context/UserDetailContext'
 
-
 function MobilePreview() {
 
   const {updatePreview,setUpdatePreview}=useContext(PreviewUpdateContext)
